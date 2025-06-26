@@ -9,13 +9,13 @@ var nodeD = new BinaryNode<string>{Value = "D"};
 var nodeE = new BinaryNode<string>{Value = "E"};
 var nodeF = new BinaryNode<string>{Value = "F"};
 
-nodeE.LeftChild = nodeF;
-nodeB.RightChild = nodeE;
-nodeA.LeftChild = nodeC;
-nodeA.RightChild = nodeD;
+nodeE.AddLeft(nodeF);
+nodeB.AddRight(nodeE);
+nodeA.AddLeft(nodeC);
+nodeA.AddRight(nodeD);
 
-root.LeftChild = nodeA;
-root.RightChild = nodeB;
+root.AddLeft(nodeA);
+root.AddRight(nodeB);
 
 Console.WriteLine("Binary Node Output");
 Console.WriteLine(root);
