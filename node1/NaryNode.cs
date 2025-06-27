@@ -1,3 +1,6 @@
+using System.Text;
+using node1;
+
 namespace nary_node1;
 
 public class NaryNode<T>
@@ -20,6 +23,21 @@ public class NaryNode<T>
 
     public override string ToString()
     {
-        return $"{Value}: {string.Join(" ", Children.Select(i => i.Value))}";
+        return ToString(0, this);
+    }
+
+    private string ToString(int level, NaryNode<T> node)
+    {
+        var visitor = new NaryNodePrintVisitor<T>(level);
+        var sb = new StringBuilder();
+        visitor.Visit(node);
+        sb.Append(visitor.NodeDisplay);
+
+        foreach (var child in node.Children)
+        {
+            sb.Append(ToString(level + 1, child));
+        }
+        
+        return sb.ToString();
     }
 }

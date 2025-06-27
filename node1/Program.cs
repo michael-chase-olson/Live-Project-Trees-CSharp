@@ -18,13 +18,14 @@ root.AddLeft(nodeA);
 root.AddRight(nodeB);
 
 Console.WriteLine("Binary Node Output");
-Console.WriteLine(root);
+Console.WriteLine(root.ToString());
+/*Console.WriteLine(root);
 Console.WriteLine(nodeA);
 Console.WriteLine(nodeB);
 Console.WriteLine(nodeC);
 Console.WriteLine(nodeD);
 Console.WriteLine(nodeE);
-Console.WriteLine(nodeF);
+Console.WriteLine(nodeF);*/
 
 var naryRoot = new NaryNode<string> {Value = "root"};
 
@@ -45,7 +46,9 @@ naryNodeA.AddChildren([naryNodeD, naryNodeE]);
 naryRoot.AddChildren([naryNodeA, naryNodeB, naryNodeC]);
 
 Console.WriteLine("Nary Node Output");
-Console.WriteLine(naryRoot);
+Console.WriteLine(naryNodeA.ToString());
+Console.WriteLine(naryRoot.ToString());
+/*Console.WriteLine(naryRoot);
 Console.WriteLine(naryNodeA);
 Console.WriteLine(naryNodeB);
 Console.WriteLine(naryNodeC);
@@ -54,5 +57,5 @@ Console.WriteLine(naryNodeE);
 Console.WriteLine(naryNodeF);
 Console.WriteLine(naryNodeG);
 Console.WriteLine(naryNodeH);
-Console.WriteLine(naryNodeI);
+Console.WriteLine(naryNodeI);*/
 
